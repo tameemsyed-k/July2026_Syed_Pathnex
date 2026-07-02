@@ -21,3 +21,28 @@ DataDog & ELK Stack: Monitors the live application's health and logs to catch er
 2.5 hrs -   Attended today's Class by Neeraj at 6 AM / 2nd July 2026
  summary of Class
  Neeraj explained how to create a ec2 vm, git and its configuration, and the daily activities to be done.
+
+
+Practiced few git commands
+
+`git config --global`: Configures user identity (name and email) for all local repositories.
+ 
+`git clone`: Copies a remote repository and downloads it to the local machine.
+
+`git status`: Displays the exact state of the working directory and shows what is currently being tracked.
+
+`git add`: Stages specific files, telling Git to get them ready to be saved in the next snapshot.
+ 
+`git commit -m`: Takes a snapshot of staged changes and securely attaches a descriptive message.
+ 
+`git push`: Sends locally saved commits up to the remote repository (like GitHub).
+ 
+`git checkout -b`: Creates a brand new isolated feature branch and switches your workspace to it immediately.
+
+`git checkout`: Switches active workspace back to a different, already existing branch (like `main`).
+
+`git pull`: Downloads the latest changes from the remote repository and seamlessly merges them into the current local branch.
+
+`git merge`: Combines two branches by bringing their changes together and creating a new merge commit to tie their histories.
+
+
