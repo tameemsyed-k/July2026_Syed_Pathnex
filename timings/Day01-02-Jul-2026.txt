@@ -1,0 +1,23 @@
+
+# WHAT I DID TODAY
+1hr -   Understood the roadmap to become a Devops Engineer.
+
+The DevOps Lifecycle: From Code to Cloud Deployment - High Level Overview.
+Here is the exact path our code takes from laptop to the real world, 
+step-by-step:
+Git: Saves and tracks the history of changes made to the source code.
+GitLab / Jenkins: Automatically catches your pushed code to build, test, and run the deployment pipeline.
+SonarQube: Scans that source code for bugs and security vulnerabilities.
+Docker: Packages your application into a standardized, portable container.
+Trivy: Inspects your newly built Docker container for known security flaws.
+Terraform: Automatically builds the cloud infrastructure (like AWS servers) needed to host your app.
+Ansible: Configures those newly built servers by installing software and adjusting settings.
+Helm: Bundles your complex Kubernetes deployment configurations into a reusable template.
+Argo CD: Automatically deploys your application by syncing the live cluster with the configurations stored in Git.
+Kubernetes: Runs, manages, and scales your containers to keep the app highly available.
+DataDog & ELK Stack: Monitors the live application's health and logs to catch errors in real-time.
+
+
+2.5 hrs -   Attended today's Class by Neeraj at 6 AM / 2nd July 2026
+ summary of Class
+ Neeraj explained how to create a ec2 vm, git and its configuration, and the daily activities to be done.
