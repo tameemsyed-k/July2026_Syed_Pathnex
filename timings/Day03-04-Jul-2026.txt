@@ -1,8 +1,5 @@
 Today's Update
 Day 3 - Linux Class 2
 2.5 hrs - Joined Live Class On Teams
-
-
-
-
-
+2 hrs - practiced git
+1 hr - practiced Linux
