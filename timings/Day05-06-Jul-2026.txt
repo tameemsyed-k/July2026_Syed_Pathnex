@@ -1,3 +1,17 @@
 July 06 - Updates
 2 hrs + : Attended today's class on Teams.
 Session : Bash scripting. 
+Summary:
+    "Overall, today's session gave me a solid understanding of Bash scripting 
+    and several important Linux concepts. I learned how to automate tasks using scripts, 
+    understood process management through zombie processes, explored hard and soft links, 
+    learned how Linux handles input, output, and errors using stdin, stdout, and stderr, 
+    practiced output redirection and error logging, understood the importance of exit codes, 
+    compared sed and awk for text processing.
+
+Keypoints by Neeraj:
+    how to find the largest 10 files
+    find
+    journalctl - which we will learn going forward
+    cronjob & its logs
+    top command, load average, how to increase memory size
