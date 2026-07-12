@@ -1,0 +1,19 @@
+Day 08 - Intro to Docker & CI/CD
+# ANSIBLE - Install Docker Compose
+- name: Install Docker Compose
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install dependencies
+      yum:
+        name: "python3-pip"
+        state: present
+    - name: Install docker-compose
+      pip:
+        name: docker-compose
+
+
+# docker alpine linux
+FROM alpine:latest
+WORKDIR /opt/pathnex/alpine-app
+CMD ["echo", "Hello, World!"]
