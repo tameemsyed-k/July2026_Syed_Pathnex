@@ -1,3 +1,4 @@
+<<<<< updates
 Day 09 - DOCKER INTEGRATION WITH JENKINS & GITHUB
 #ANSIBLE - SETUP DOCKER CONTAINER FOR NGINX
 - name: setup docker container for nginx
@@ -49,3 +50,99 @@ FROM ubuntu:22.04
 ENV INSTITUTE=pathnex
 ENV COURSE=Devops
 CMD echo "$INSTITUTE - $COURSE"
+=======
+# DAY 09 - DOCKER INTEGRATION WITH JENKINS & GITLAB
+# ansible - setup docker container for nginx
+
+- name: setup docker container for nginx
+  docker_image:
+    name: nginx
+    source: pull
+- name: run nginx container
+  docker_container:
+    name: nginx-container
+    image: nginx
+    state: started
+    published_ports:
+        - "8080:80"
+
+#TERRAFORM - EC2 with Auto Scaling Group
+
+resource "aws_launch_configuration" "example" {
+    name = "example-config"
+    image_id = "ami-090923409823409"
+    instance_type = "t3.medium"
+}
+
+resource "aws_autoscaling_group" "example" {
+    desired_capacity     = 2
+    max_size             = 3
+    min_size             = 1
+    vpc_zone_identifier  = ["subnet-12342342"]
+    launch_configuration = aws_launch_configuration.example.id
+}
+
+# KUBERNETES - HORIZONTAL POD AUTOSCALER
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: pathnex-Deployment
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: pathnex-app
+    template:
+        metadata:
+            labels:
+                app: pathnex-app
+        spec:
+            containers:
+                - name: nginx
+                  image: nginx
+                  ports:
+                    - containerPort: 80
+
+---
+
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+    name: pathnex-hpa 
+spec:
+    scaleTargetRef:
+        apiVersion: apps/v1
+        kind: Deployment
+        name: pathnex-Deployment
+    minReplicas: 1
+    maxReplicas: 10
+    targetCPUUtilizationPercentage: 50
+
+# jenkinsfile - Deploy to Kubernetes
+pipeline {
+    agent any
+    stages {
+        stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    sh 'kubectl apply -f deployment.yaml"
+                }
+            }
+        }
+    }
+}
+# gitlab CI/CD - Deploy to Kubernetes
+stages:
+ - deploy
+
+deploy:
+    stage: deploy
+    script:
+        - kubectl apply -f kubernetes/deployment.yaml
+
+# docker # environment variables
+FROM ubuntu:22.04
+ENV INSTITUTE=pathnex
+ENV COURSE=Devops
+CMD echo "$INSTITUTE - $COURSE"
+>>>>> main
