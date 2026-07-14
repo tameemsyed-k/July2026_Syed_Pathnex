@@ -1,3 +1,56 @@
+<<<<< updates
+Day 09 - DOCKER INTEGRATION WITH JENKINS & GITHUB
+#ANSIBLE - SETUP DOCKER CONTAINER FOR NGINX
+- name: setup docker container for nginx
+  hosts: all
+  become: yes
+  tasks:
+    - name: pull nginx image
+      docker_image:
+        name: nginx
+        source: pull
+    - name: run nginx container
+      docker_container:
+        name: nginx-container
+        image: nginx
+        state: started
+        published_ports:
+          - "8080:80"
+
+# terraform - ec2 with auto scaling group
+resource "aws_launch_configuration" "example" {
+  name = 'nginx-container'
+  image_id = "ami-xxxxxxxxxxxx"
+  instance_type = "t3.medium"
+}
+
+# KUBERNETES - HORIZONTAL POD AUTOSCALER HPA
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pathnex-Deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pathnex-app
+  template:
+    metadata:
+      labels:
+        app: pathnex-app
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80
+
+# DOCKER env variables
+FROM ubuntu:22.04
+ENV INSTITUTE=pathnex
+ENV COURSE=Devops
+CMD echo "$INSTITUTE - $COURSE"
+=======
 # DAY 09 - DOCKER INTEGRATION WITH JENKINS & GITLAB
 # ansible - setup docker container for nginx
 
@@ -92,3 +145,4 @@ FROM ubuntu:22.04
 ENV INSTITUTE=pathnex
 ENV COURSE=Devops
 CMD echo "$INSTITUTE - $COURSE"
+>>>>> main
