@@ -1,0 +1,10 @@
+July 17 updates
+Session: Cancelled
+
+3 hrs - Revised topics from Day 1
+2 hrs - Hands on practice
+2 hrs - explore advanced scheduling concepts
+        Taints, Tolerations, Node Affinity/Anti Affinity, Pod Affinity/Anti Affinity
+        imperative commands, declarative commands
+        
+45m  - joined evening class
